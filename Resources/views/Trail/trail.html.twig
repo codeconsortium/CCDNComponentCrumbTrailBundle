@@ -1,0 +1,16 @@
+<div class="common_box_5 margin_10 bread_crumb_trail">
+	<ul class="bread_crumb_trail margin_0">
+	{% for key, crumb in crumbs.getTrail %}
+		<li class="{%if key == crumbs.count %}bread_crumb_last{% else %}bread_crumb{% endif %}">
+			<a class="bread_crumb_link" href="{{ crumb.url }}">
+				<img class="bread_crumb_icon" width="16px" height="16px" src="{{ asset('bundles/CCDNComponentcommon/images/icons/Black/16x16/16x16_'~ crumb.icon ~'.png') }}" />&nbsp;
+				{{ crumb.label }}
+			</a>
+			<img class="bread_crumb_right_chevron" width="20px" height="26px" src="{{ asset('bundles/CCDNComponentcrumbtrail/images/layout/right_chevron.png') }}" />&nbsp;
+		</li>
+	{% else %}
+
+	{% endfor %}
+		<li class="crumb_tools"><a href="#top"><img class="bread_crumb_icon" width="16px" height="16px" src="{{ asset('bundles/CCDNComponentcommon/images/icons/Black/16x16/16x16_top.png') }}" /></a></li>
+	</ul>
+</div>

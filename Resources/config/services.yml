@@ -1,0 +1,7 @@
+parameters:
+    ccdn_component_crumb_trail.crumb_trail.class: CCDNComponent\CrumbTrailBundle\Controller\CrumbTrailController
+    
+services:
+    crumb_trail:
+        class:      %ccdn_component_crumb_trail.crumb_trail.class%
+        arguments:  [@templating]
