@@ -1,5 +1,5 @@
-CCDN Forum README.
-==================
+CCDNComponent CrumbTrailBundle README.
+======================================
 
   
 Notes:  
@@ -20,6 +20,11 @@ For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 
 
+Dependencies:
+-------------
+
+[CCDNComponent CommonBundle](https://github.com/codeconsortium/CommonBundle)
+
 Installation:
 -------------
     
@@ -35,3 +40,6 @@ Installation:
 4) Symlink assets to your public web directory by running this in the command line:
 
 	php app/console assets:install --symlink web/
+	
+Then your done, if you need further help/support, have suggestions or want to contribute please join the community at [www.codeconsortium.com](http://www.codeconsortium.com)
+	
