@@ -24,7 +24,6 @@ Dependencies:
 -------------
 
 [CCDNComponent CommonBundle](https://github.com/codeconsortium/CommonBundle)
-[CCDNComponent CrumbTrailBundle](https://github.com/codeconsortium/CrumbTrailBundle)
 
 Installation:
 -------------
