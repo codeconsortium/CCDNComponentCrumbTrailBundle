@@ -24,22 +24,42 @@ Dependencies:
 -------------
 
 [CCDNComponent CommonBundle](https://github.com/codeconsortium/CommonBundle)
+[CCDNComponent CrumbTrailBundle](https://github.com/codeconsortium/CrumbTrailBundle)
 
 Installation:
 -------------
-    
-1) Create the directory src/CCDNComponent in your Symfony directory.
-  
-2) Add the CommonBundle and CrumbTrailBundle to CCDNComponent directory.  
 
-3) In your AppKernel.php add the following bundles to the registerBundles method array:  
+1) Download and install the dependencies.
+   
+   You can set deps to include:
 
-	new CCDNComponent\CommonBundle\CCDNComponentCommonBundle(),    
+```sh
+[CCDNComponentCommonBundle]
+    git=http://github.com/codeconsortium/CommonBundle.git
+    target=/bundles/CCDNComponent/CommonBundle
+
+[CCDNComponentCrumbTrailBundle]
+    git=http://github.com/codeconsortium/CrumbTrailBundle.git
+    target=/bundles/CCDNComponent/CrumbTrailBundle
+```
+add to your autoload:
+
+```php
+    'CCDNComponent'    => __DIR__.'/../vendor/bundles',
+```
+and then run `bin/vendors install` script.
+
+2) In your AppKernel.php add the following bundles to the registerBundles method array:  
+
+```php
+	new CCDNComponent\CommonBundle\CCDNComponentCommonBundle(),
 	new CCDNComponent\CrumbTrailBundle\CCDNComponentCrumbTrailBundle(),
+```
+	
+3) Symlink assets to your public web directory by running this in the command line:
 
-4) Symlink assets to your public web directory by running this in the command line:
-
+```sh
 	php app/console assets:install --symlink web/
+```
 	
 Then your done, if you need further help/support, have suggestions or want to contribute please join the community at [www.codeconsortium.com](http://www.codeconsortium.com)
-	
