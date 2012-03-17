@@ -1,7 +1,7 @@
 <div class="common_box_5 margin_10 bread_crumb_trail">
 	<ul class="bread_crumb_trail margin_0">
 	{% for key, crumb in crumbs.getTrail %}
-		<li class="{%if key == crumbs.count %}bread_crumb_last{% else %}bread_crumb{% endif %}">
+		<li class="{% if key == crumbs.count %}bread_crumb_last{% else %}bread_crumb{% endif %}">
 			<a class="bread_crumb_link" href="{{ crumb.url }}">
 				<img class="bread_crumb_icon" width="16" height="16" src="{{ asset('bundles/ccdncomponentcommon/images/icons/Black/16x16/16x16_'~ crumb.icon ~'.png') }}" alt="{{ crumb.label }}">&nbsp;
 				{{ crumb.label }}
