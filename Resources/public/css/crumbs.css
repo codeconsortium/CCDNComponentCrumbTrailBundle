@@ -1,81 +1,70 @@
 div.bread_crumb_trail {
-	background: url(../images/layout/gray_bar_horizontal.png) repeat-x;
+/*	background: url(../images/layout/gray_bar_horizontal.png) repeat-x;*/
 }
 
-ul.bread_crumb_trail {
+div.bread_crumb_trail {
+	height: 28px;
+	padding: 1px;
+	overflow: hidden;
+	
 	vertical-align: middle;
 	text-align: left;
-	padding: 0px 0px 0px 10px;
-	overflow: hidden;
+	
+	font: small "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif; 
+	color: #555;
+}
+
+div.bread_crumb {
+	display: inline-block;
+	width: auto;
 	height: 26px;
-}
-
-li.bread_crumb {
-	list-style-image: none;
-	list-style-type: none;
-	vertical-align: middle;
-
-	padding: 0px;
-	margin: 0px;
-
-	display: inline;
-	text-transform: capitalize;
-		
-	text-shadow: white 0px 2px 3px;
-	font: 11px "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
-	color: #373737;
-}
-
-li.bread_crumb_last {
-	list-style-image: none;
-	list-style-type: none;
-	vertical-align: middle;
-
-	padding: 0px;
-	margin: 0px;
-
-	display: inline;
-	
-	text-transform: capitalize;
-	font-weight: bold;
-	font: bold x-small "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;	
-	color: #373737;
-	text-shadow: white 0px 2px 3px;
-}
-
-li.crumb_tools {
-	list-style-image: none;
-	list-style-type: none;
-	vertical-align: middle;
+	line-height: 26px;
 	
 	margin: 0px;
-/*	padding: 0px;*/
+	padding: 0px 10px;
+	
+	background-color: #d9d9d9;
 
-	display: inline;
+	vertical-align: middle;
+	text-transform: capitalize;	
+}
+
+div.bread_crumb_last {
+	display: inline-block;
+	width: auto;
+	height: 26px;
+	line-height: 26px;
 		
+	margin: 0px;
+	padding: 0px 10px;
+
+	background-color: #dde6ec;
+
+	vertical-align: middle;
+	text-transform: capitalize;	
+}
+
+div.crumb_tools {
+	display: inline;
 	float: right;
+	margin: 0px;
 	padding: 4px 6px 4px 2px;
-
+	vertical-align: middle;
 }
 
-a.bread_crumb_link:link {
-	color: black;
-	text-decoration: none;
-	
-	vertical-align: middle;
-	
+a.bread_crumb_link:link, a.bread_crumb_link:visited, a.bread_crumb_link:active {
+	width: auto;
+	height: auto;
+	line-height: auto;
+
 	margin: 0px;
 	padding: 0px;
-}	/* unvisited link */
-a.bread_crumb_link:visited {
-	color: black;
-	text-decoration: none;
-	
+
 	vertical-align: middle;
 	
-	margin: 0px;
-	padding: 0px;
-}	/* visited link */
+	color: black;
+	text-decoration: none;	
+}	
 a.bread_crumb_link:hover {
 	color: black;
 	text-decoration: none;
@@ -84,16 +73,7 @@ a.bread_crumb_link:hover {
 	
 	margin: 0px;
 	padding: 0px;
-}	/* mouse over link */
-a.bread_crumb_link:active {
-	color: black;
-	text-decoration: none;
-	
-	vertical-align: middle;
-			
-	margin: 0px;
-	padding: 0px;
-}	/* selected link */
+}
 
 img.bread_crumb_icon {
 	vertical-align: middle;
@@ -106,7 +86,7 @@ img.bread_crumb_icon {
 	height: 16px;
 }
 
-img.bread_crumb_right_chevron {
+img.bread_crumb_chevron {
 	vertical-align: middle;
 
 	border: 0px;
