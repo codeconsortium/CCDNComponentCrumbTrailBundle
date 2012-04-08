@@ -3,14 +3,14 @@ div.bread_crumb_trail {
 }
 
 div.bread_crumb_trail {
-	height: 28px;
-	padding: 1px;
+	height: 32px;
+	padding: 0px;
 	overflow: hidden;
 	
 	vertical-align: middle;
 	text-align: left;
 	
-	font: small "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif; 
+	font: 8pt "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif; 
 	color: #555;
 }
 
@@ -18,13 +18,10 @@ div.bread_crumb {
 	display: inline-block;
 	width: auto;
 	height: 26px;
-	line-height: 26px;
-	
+	line-height: 20px;
 	margin: 0px;
-	padding: 0px 10px;
-	
+	padding: 0px 5px;
 	background-color: #d9d9d9;
-
 	vertical-align: middle;
 	text-transform: capitalize;	
 }
@@ -33,53 +30,37 @@ div.bread_crumb_last {
 	display: inline-block;
 	width: auto;
 	height: 26px;
-	line-height: 26px;
-		
+	line-height: 20px;
 	margin: 0px;
-	padding: 0px 10px;
-
+	padding: 0px 5px;
 	background-color: #dde6ec;
-
 	vertical-align: middle;
 	text-transform: capitalize;	
 }
-
+/*
 div.crumb_tools {
 	display: inline;
 	float: right;
 	margin: 0px;
 	padding: 4px 6px 4px 2px;
 	vertical-align: middle;
-}
+}*/
 
 a.bread_crumb_link:link, a.bread_crumb_link:visited, a.bread_crumb_link:active {
-	width: auto;
-	height: auto;
-	line-height: auto;
-
 	margin: 0px;
 	padding: 0px;
-
-	vertical-align: middle;
-	
 	color: black;
+	vertical-align: middle;
 	text-decoration: none;	
 }	
 a.bread_crumb_link:hover {
-	color: black;
 	text-decoration: none;
-	
-	vertical-align: middle;
-	
-	margin: 0px;
-	padding: 0px;
 }
 
 img.bread_crumb_icon {
 	vertical-align: middle;
-
 	border: 0px;
-	margin: 0px;
+	margin: 5px 2px;
 	padding: 0px;
 	
 	width: 16px;

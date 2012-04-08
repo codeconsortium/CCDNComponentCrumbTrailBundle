@@ -1,33 +1,35 @@
 {% spaceless %}
-<div class="section_wrap_square bread_crumb_trail">
-	<div class="bread_crumb_trail">
-	{% for key, crumb in crumbs.getTrail %}
-		{% if key == crumbs.count %}
-			<div class="bread_crumb_last">
-				<a class="bread_crumb_link" href="{{ crumb.url }}">
-					<img class="bread_crumb_icon" width="16" height="16" src="{{ asset('bundles/ccdncomponentcommon/images/icons/Black/16x16/16x16_'~ crumb.icon ~'.png') }}" alt="{{ crumb.label }}">&nbsp;
-					{{ crumb.label }}
-				</a>				
-			</div>
-			<img class="bread_crumb_chevron" width="20" height="26" src="{{ asset('bundles/ccdncomponentcrumbtrail/images/layout/section_current_end.png') }}" alt="chevron">
+<div class="section_wrap_square">
+	<div class="float_left">
+		<div class="bread_crumb_trail">
+		{% for key, crumb in crumbs.getTrail %}
+			{% if key == crumbs.count %}
+				<div class="bread_crumb_last">
+					<a class="bread_crumb_link" href="{{ crumb.url }}">
+						<img class="bread_crumb_icon" width="16" height="16" src="{{ asset('bundles/ccdncomponentcommon/images/icons/Black/16x16/16x16_'~ crumb.icon ~'.png') }}" alt="{{ crumb.label }}">&nbsp;
+						{{ crumb.label }}
+					</a>
+				</div>
+				<img class="bread_crumb_chevron" width="20" height="26" src="{{ asset('bundles/ccdncomponentcrumbtrail/images/layout/section_current_end.png') }}" alt="chevron">
 			
-		{% else %}
-			<div class="bread_crumb">
-				<a class="bread_crumb_link" href="{{ crumb.url }}">
-					<img class="bread_crumb_icon" width="16" height="16" src="{{ asset('bundles/ccdncomponentcommon/images/icons/Black/16x16/16x16_'~ crumb.icon ~'.png') }}" alt="{{ crumb.label }}">&nbsp;
-					{{ crumb.label }}
-				</a>
-			</div>
-			{% if key == (crumbs.count - 1) %}
-				<img class="bread_crumb_chevron" width="20" height="26" src="{{ asset('bundles/ccdncomponentcrumbtrail/images/layout/section_current_start.png') }}" alt="chevron">
 			{% else %}
-				<img class="bread_crumb_chevron" width="20" height="26" src="{{ asset('bundles/ccdncomponentcrumbtrail/images/layout/section_middle.png') }}" alt="chevron">			
-			{% endif %}
+				<div class="bread_crumb">
+					<a class="bread_crumb_link" href="{{ crumb.url }}">
+						<img class="bread_crumb_icon" width="16" height="16" src="{{ asset('bundles/ccdncomponentcommon/images/icons/Black/16x16/16x16_'~ crumb.icon ~'.png') }}" alt="{{ crumb.label }}">&nbsp;
+						{{ crumb.label }}
+					</a>
+				</div>
+				{% if key == (crumbs.count - 1) %}
+					<img class="bread_crumb_chevron" width="20" height="26" src="{{ asset('bundles/ccdncomponentcrumbtrail/images/layout/section_current_start.png') }}" alt="chevron">
+				{% else %}
+					<img class="bread_crumb_chevron" width="20" height="26" src="{{ asset('bundles/ccdncomponentcrumbtrail/images/layout/section_middle.png') }}" alt="chevron">
+				{% endif %}
 			
-		{% endif %}
-	{% else %}
-
-	{% endfor %}
+			{% endif %}
+		{% endfor %}
+		</div>
+	</div>
+	<div class="float_right">
 		<div class="crumb_tools"><a href="#top"><img class="bread_crumb_icon" width="16" height="16" src="{{ asset('bundles/ccdncomponentcommon/images/icons/Black/16x16/16x16_top.png') }}" alt="top"></a></div>
 	</div>
 </div>
