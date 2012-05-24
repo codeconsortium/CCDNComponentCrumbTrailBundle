@@ -2,10 +2,9 @@ CCDNComponent CrumbTrailBundle README.
 ======================================
 
   
-Notes:  
-------
+## Notes:  
   
-This bundle is for the symfony framework and thusly requires Symfony 2.0.x and PHP 5.3.6
+This bundle is for the symfony framework and requires Symfony 2.0.x and PHP 5.3.6
   
 This project uses Doctrine 2.0.x and so does not require any specific database.
   
@@ -23,45 +22,44 @@ Icons courtesy of http://pc.de/icons/ licensed under http://creativecommons.org/
 
 Other graphics are works of CodeConsortium.
 
-Dependencies:
--------------
+## Description.
 
-[CCDNComponent CommonBundle](https://github.com/codeconsortium/CommonBundle)
+This is a symfony2 bundle for providing a link crumb trail to allow users to backtrack through the site as they dig deeper into a hierarchically structured website powered by the SF2 framework.
 
-Installation:
--------------
+## Features.
 
-1) Download and install the dependencies.
-   
-   You can set deps to include:
+1. Callable as a service.
+2. Can add crumbs through a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface).
+3. Add crumb trail template to any twig template to list crumbs for you.
+4. Uses icons from the [CCDNComponent CommonBundle](http://github.com/codeconsortium/CommonBundle).
 
-```sh
-[CCDNComponentCommonBundle]
-    git=http://github.com/codeconsortium/CommonBundle.git
-    target=/bundles/CCDNComponent/CommonBundle
+Before installation of this bundle, you can download the [Sandbox](https://github.com/codeconsortium/CCDNForumSandBox) for testing/development and feature review, or alternatively see the product in use at [CodeConsortium](http://www.codeconsortium.com).
 
-[CCDNComponentCrumbTrailBundle]
-    git=http://github.com/codeconsortium/CrumbTrailBundle.git
-    target=/bundles/CCDNComponent/CrumbTrailBundle
-```
-add to your autoload:
+## Documentation.
 
-```php
-    'CCDNComponent'    => __DIR__.'/../vendor/bundles',
-```
-and then run `bin/vendors install` script.
+Documentation can be found in the `Resources/doc/index.md` file in this bundle:
 
-2) In your AppKernel.php add the following bundles to the registerBundles method array:  
+[Read the Documentation](http://github.com/codeconsortium/CrumbTrailBundle/blob/master/Resources/doc/index.md).
 
-```php
-	new CCDNComponent\CommonBundle\CCDNComponentCommonBundle(),
-	new CCDNComponent\CrumbTrailBundle\CCDNComponentCrumbTrailBundle(),
-```
-	
-3) Symlink assets to your public web directory by running this in the command line:
+## Installation.
 
-```sh
-	php app/console assets:install --symlink web/
-```
-	
-Then your done, if you need further help/support, have suggestions or want to contribute please join the community at [www.codeconsortium.com](http://www.codeconsortium.com)
+All the installation instructions are located in [documentation](http://github.com/codeconsortium/CrumbTrailBundle/blob/master/Resources/doc/Install.md).
+
+## License.
+
+This software is licensed under the MIT license. See the complete license file in the bundle:
+
+	Resources/meta/LICENSE
+
+[Read the License](http://github.com/codeconsortium/CrumbTrailBundle/blob/master/Resources/meta/LICENSE).
+
+## About.
+
+[CCDNComponent CrumbTrailBundle](http://github.com/codeconsortium/CrumbTrailBundle) is free software from [Code Consortium](http://www.codeconsortium.com). 
+See also the list of [contributors](http://github.com/codeconsortium/CrumbTrailBundle/contributors).
+
+## Reporting an issue or feature request.
+
+Issues and feature requests are tracked in the [Github issue tracker](http://github.com/codeconsortium/CrumbTrailBundle/issues).
+
+Discussions and debates on the project can be further discussed at [Code Consortium](http://www.codeconsortium.com).
