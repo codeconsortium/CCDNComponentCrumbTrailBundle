@@ -11,14 +11,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CCDNComponent\CrumbTrailBundle\Controller;
+namespace CCDNComponent\CrumbTrailBundle\Component;
 
 /**
  * 
  * @author Reece Fowell <reece@codeconsortium.com> 
  * @version 1.0
  */
-class CrumbTrailController
+class Crumb
 {
 
 
