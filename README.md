@@ -33,7 +33,7 @@ This is a symfony2 bundle for providing a link crumb trail to allow users to bac
 3. Add crumb trail template to any twig template to list crumbs for you.
 4. Uses icons from the [CCDNComponent CommonBundle](http://github.com/codeconsortium/CommonBundle).
 
-Before installation of this bundle, you can download the [Sandbox](https://github.com/codeconsortium/CCDNForumSandBox) for testing/development and feature review, or alternatively see the product in use at [CodeConsortium](http://www.codeconsortium.com).
+Before installation of this bundle, you can download the [Sandbox](https://github.com/codeconsortium/CCDNSandBox) for testing/development and feature review, or alternatively see the product in use at [CodeConsortium](http://www.codeconsortium.com).
 
 ## Documentation.
 
