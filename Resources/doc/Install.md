@@ -7,14 +7,15 @@ Installing CCDNComponent CrumbTrailBundle 1.0
 
 ## Installation:
 
-Installation takes only 6 steps:
+Installation takes only 7 steps:
 
 1. Download and install the dependencies.
 2. Register bundles with autoload.php.
 3. Register bundles with AppKernel.php.  
 4. Run vendors install script.
-5. Symlink assets to your public web directory.
-6. Warmup the cache.
+5. Update your app/config/config.yml.
+6. Symlink assets to your public web directory.
+7. Warmup the cache.
 
 ### Step 1: Download and install the dependencies.
    
@@ -60,7 +61,22 @@ From your projects root Symfony directory on the command line run:
 $ php bin/vendors install
 ```
 
-### Step 5: Symlink assets to your public web directory.
+### Step 5: Update your app/config/config.yml.
+
+In your app/config/config.yml add:    
+
+``` yml
+#
+# for CCDNComponent CrumbTrailBundle
+#
+ccdn_component_crumb_trail:
+    crumb:
+        truncate_first: 20
+        truncate_item: 20
+        truncate_last: 20
+```
+
+### Step 6: Symlink assets to your public web directory.
 
 From your projects root Symfony directory on the command line run:
 
@@ -68,7 +84,7 @@ From your projects root Symfony directory on the command line run:
 $ php app/console assets:install --symlink web/
 ```
 
-### Step 6: Warmup the cache.
+### Step 7: Warmup the cache.
 
 From your projects root Symfony directory on the command line run:
 

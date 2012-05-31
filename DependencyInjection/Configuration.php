@@ -39,8 +39,15 @@ class Configuration implements ConfigurationInterface
         // more information on that topic.
 		$rootNode
 			->children()
+				->arrayNode('crumb')
+					->children()
+						->scalarNode('truncate_first')->defaultValue('20')->end()
+						->scalarNode('truncate_item')->defaultValue('20')->end()
+						->scalarNode('truncate_last')->defaultValue('20')->end()
+					->end()
+				->end()
 			->end();
-
+			
         return $treeBuilder;
     }
 }

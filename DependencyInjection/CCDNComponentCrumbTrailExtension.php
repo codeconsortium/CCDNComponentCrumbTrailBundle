@@ -42,6 +42,11 @@ class CCDNComponentCrumbTrailExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+		$container->setParameter('ccdn_component_crumb_trail.crumb.truncate_first', $config['crumb']['truncate_first']);
+		$container->setParameter('ccdn_component_crumb_trail.crumb.truncate_item', $config['crumb']['truncate_item']);
+		$container->setParameter('ccdn_component_crumb_trail.crumb.truncate_last', $config['crumb']['truncate_last']);
+		
     }
 
 	public function getAlias()
