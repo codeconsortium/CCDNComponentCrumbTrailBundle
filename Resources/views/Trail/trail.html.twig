@@ -7,7 +7,7 @@
 			<div class="bread_crumb_last">
 				<a class="bread_crumb_link" href="{{ crumb.url }}" title="{{ crumb.label }}">
 					<img class="bread_crumb_icon" width="16" height="16" src="{{ asset('bundles/ccdncomponentcommon/images/icons/Black/16x16/16x16_'~ crumb.icon ~'.png') }}" alt="{{ crumb.label }}">&nbsp;
-					{{ truncDot(crumb.label, param('ccdn_component_crumb_trail.crumb.truncate_last')) }}
+					{{ truncDot(crumb.label, param('ccdn_component_crumb_trail.crumb.last_crumb_truncate')) }}
 				</a>
 			</div>
 			<img class="bread_crumb_chevron" width="20" height="26" src="{{ asset('bundles/ccdncomponentcrumbtrail/images/layout/section_current_end.png') }}" alt="chevron">
@@ -17,9 +17,9 @@
 				<a class="bread_crumb_link" href="{{ crumb.url }}" title="{{ crumb.label }}">
 					<img class="bread_crumb_icon" width="16" height="16" src="{{ asset('bundles/ccdncomponentcommon/images/icons/Black/16x16/16x16_'~ crumb.icon ~'.png') }}" alt="{{ crumb.label }}">&nbsp;
 					{% if key == 0 %}
-						{{ truncDot(crumb.label, param('ccdn_component_crumb_trail.crumb.truncate_first')) }}	
+						{{ truncDot(crumb.label, param('ccdn_component_crumb_trail.crumb.first_crumb_truncate')) }}	
 					{% else %}
-						{{ truncDot(crumb.label, param('ccdn_component_crumb_trail.crumb.truncate_item')) }}						
+						{{ truncDot(crumb.label, param('ccdn_component_crumb_trail.crumb.mid_crumb_truncate')) }}						
 					{% endif %}
 				</a>
 			</div>

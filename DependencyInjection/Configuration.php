@@ -41,9 +41,9 @@ class Configuration implements ConfigurationInterface
 			->children()
 				->arrayNode('crumb')
 					->children()
-						->scalarNode('truncate_first')->defaultValue('20')->end()
-						->scalarNode('truncate_item')->defaultValue('20')->end()
-						->scalarNode('truncate_last')->defaultValue('20')->end()
+						->scalarNode('first_crumb_truncate')->defaultValue('20')->end()
+						->scalarNode('mid_crumb_truncate')->defaultValue('20')->end()
+						->scalarNode('last_crumb_truncate')->defaultValue('20')->end()
 					->end()
 				->end()
 			->end();

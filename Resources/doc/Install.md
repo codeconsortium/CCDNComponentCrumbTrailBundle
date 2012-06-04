@@ -71,9 +71,9 @@ In your app/config/config.yml add:
 #
 ccdn_component_crumb_trail:
     crumb:
-        truncate_first: 20
-        truncate_item: 20
-        truncate_last: 20
+        first_crumb_truncate: 20
+        mid_crumb_truncate: 20
+        last_crumb_truncate: 20
 ```
 
 ### Step 6: Symlink assets to your public web directory.
