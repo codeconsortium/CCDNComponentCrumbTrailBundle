@@ -29,7 +29,19 @@ use Symfony\Component\DependencyInjection\Loader;
  */
 class CCDNComponentCrumbTrailExtension extends Extension
 {
-
+	
+	
+	
+    /**
+     * {@inheritDoc}
+     */
+	public function getAlias()
+	{
+		return 'ccdn_component_crumb_trail';
+	}
+	
+	
+	
     /**
      * {@inheritDoc}
      */
@@ -48,10 +60,5 @@ class CCDNComponentCrumbTrailExtension extends Extension
 		$container->setParameter('ccdn_component_crumb_trail.crumb.last_crumb_truncate', $config['crumb']['last_crumb_truncate']);
 		
     }
-
-	public function getAlias()
-	{
-		return 'ccdn_component_crumb_trail';
-	}
 	
 }
