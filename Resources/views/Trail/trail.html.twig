@@ -4,7 +4,7 @@
 		{%- if key == crumbs.count -%}
 			<li class="active">
 				<a href="{{- crumb.url -}}" title="{{- crumb.label -}}">{{- truncDot(crumb.label, param('ccdn_component_crumb_trail.crumb.last_crumb_truncate')) -}}</a>
-			</li>		
+			</li>
 		{%- else -%}
 			<li>
 				<a href="{{- crumb.url -}}" title="{{- crumb.label -}}">

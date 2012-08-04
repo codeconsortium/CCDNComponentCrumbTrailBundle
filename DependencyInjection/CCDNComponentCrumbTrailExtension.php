@@ -3,8 +3,8 @@
 /*
  * This file is part of the CCDN CommonBundle
  *
- * (c) CCDN (c) CodeConsortium <http://www.codeconsortium.com/> 
- * 
+ * (c) CCDN (c) CodeConsortium <http://www.codeconsortium.com/>
+ *
  * Available on github <http://www.github.com/codeconsortium/>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -23,31 +23,27 @@ use Symfony\Component\DependencyInjection\Loader;
  * This is the class that loads and manages your bundle configuration
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
- * 
- * @author Reece Fowell <reece@codeconsortium.com> 
+ *
+ * @author Reece Fowell <reece@codeconsortium.com>
  * @version 1.0
  */
 class CCDNComponentCrumbTrailExtension extends Extension
 {
-	
-	
-	
+
     /**
      * {@inheritDoc}
      */
-	public function getAlias()
-	{
-		return 'ccdn_component_crumb_trail';
-	}
-	
-	
-	
+    public function getAlias()
+    {
+        return 'ccdn_component_crumb_trail';
+    }
+
     /**
      * {@inheritDoc}
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-		$processor = new Processor();
+        $processor = new Processor();
         $configuration = new Configuration();
 
         $config = $processor->processConfiguration($configuration, $configs);
@@ -55,10 +51,10 @@ class CCDNComponentCrumbTrailExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-		$container->setParameter('ccdn_component_crumb_trail.crumb.first_crumb_truncate', $config['crumb']['first_crumb_truncate']);
-		$container->setParameter('ccdn_component_crumb_trail.crumb.mid_crumb_truncate', $config['crumb']['mid_crumb_truncate']);
-		$container->setParameter('ccdn_component_crumb_trail.crumb.last_crumb_truncate', $config['crumb']['last_crumb_truncate']);
-		
+        $container->setParameter('ccdn_component_crumb_trail.crumb.first_crumb_truncate', $config['crumb']['first_crumb_truncate']);
+        $container->setParameter('ccdn_component_crumb_trail.crumb.mid_crumb_truncate', $config['crumb']['mid_crumb_truncate']);
+        $container->setParameter('ccdn_component_crumb_trail.crumb.last_crumb_truncate', $config['crumb']['last_crumb_truncate']);
+
     }
-	
+
 }
