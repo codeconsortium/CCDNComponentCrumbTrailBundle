@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CCDN CommonBundle
+ * This file is part of the CCDNComponent CrumbTrailBundle
  *
  * (c) CCDN (c) CodeConsortium <http://www.codeconsortium.com/>
  *
@@ -13,8 +13,8 @@
 
 namespace CCDNComponent\CrumbTrailBundle\DependencyInjection;
 
-use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
 /**
  * This is the class that validates and merges configuration from your app/config files
