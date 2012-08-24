@@ -1,9 +1,9 @@
-Installing CCDNComponent CrumbTrailBundle 1.0
-============================================
+Installing CCDNComponent CrumbTrailBundle 1.2
+=============================================
 
 ## Dependencies:
 
-1. [CCDNComponent CommonBundle](https://github.com/codeconsortium/CommonBundle)
+1. [CCDNComponent CommonBundle](https://github.com/codeconsortium/CommonBundle/tree/v1.2).
 
 ## Installation:
 
@@ -25,7 +25,7 @@ Append the following to end of your deps file (found in the root of your Symfony
 [CCDNComponentCrumbTrailBundle]
     git=http://github.com/codeconsortium/CrumbTrailBundle.git
     target=/bundles/CCDNComponent/CrumbTrailBundle
-
+    version=v1.2
 ```
 ### Step 2: Register bundles with autoload.php.
 
