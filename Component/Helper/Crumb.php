@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CCDNComponent\CrumbTrailBundle\Component;
+namespace CCDNComponent\CrumbTrailBundle\Component\Helper;
 
 /**
  *

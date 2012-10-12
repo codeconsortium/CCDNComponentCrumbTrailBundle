@@ -1,6 +1,6 @@
 parameters:
 
-    ccdn_component_crumb.trail.class: CCDNComponent\CrumbTrailBundle\Component\Crumb
+    ccdn_component_crumb.trail.class: CCDNComponent\CrumbTrailBundle\Component\Helper\Crumb
 
 services:
 
