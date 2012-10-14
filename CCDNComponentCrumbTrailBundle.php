@@ -22,4 +22,21 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class CCDNComponentCrumbTrailBundle extends Bundle
 {
+			
+	/**
+	 *
+	 * @access public
+	 */
+	public function boot()
+	{
+		$twig = $this->container->get('twig');	
+		$twig->addGlobal('ccdn_component_crumb_trail', array(
+			'crumb' => array(
+				'first_crumb_truncate' => $this->container->getParameter('ccdn_component_crumb_trail.crumb.first_crumb_truncate'),
+				'mid_crumb_truncate' => $this->container->getParameter('ccdn_component_crumb_trail.crumb.mid_crumb_truncate'),
+				'last_crumb_truncate' => $this->container->getParameter('ccdn_component_crumb_trail.crumb.last_crumb_truncate'),
+			),
+		));
+	}
+
 }
