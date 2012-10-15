@@ -40,8 +40,8 @@ class Crumb
      * Implements the Fluent Interface
      *
      * @access public
-     * @param $label, $url, $icon
-     * @return $this
+     * @param string $label, string $url, string $icon
+     * @return self
      */
     public function add($label, $url, $icon = null)
     {
@@ -53,7 +53,7 @@ class Crumb
     /**
      *
      * @access public
-     * @return Array() $crumbs
+     * @return array $crumbs
      */
     public function getTrail()
     {
