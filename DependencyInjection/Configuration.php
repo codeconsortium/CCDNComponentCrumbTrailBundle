@@ -40,6 +40,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->arrayNode('crumb')
+	                ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('first_crumb_truncate')->defaultValue('20')->end()
                         ->scalarNode('mid_crumb_truncate')->defaultValue('20')->end()
