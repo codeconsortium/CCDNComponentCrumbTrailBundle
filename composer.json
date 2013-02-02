@@ -2,7 +2,7 @@
     "name": "codeconsortium/ccdn-component-crumb-trail-bundle",
     "type": "symfony-bundle",
     "description": "CCDN Component Crumb Trail Bundle",
-    "keywords": ["forum", "board"],
+    "keywords": ["ccdn", "codeconsortium", "crumb trail", "crumb", "trail", "navigation"],
     "homepage": "http://github.com/codeconsortium/CCDNComponentCrumbTrailBundle",
     "license": "MIT",
     "authors": [
