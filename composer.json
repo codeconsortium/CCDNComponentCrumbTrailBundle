@@ -1,9 +1,9 @@
 {
-    "name": "ccdn-forum/crumb-trail-bundle",
+    "name": "codeconsortium/ccdn-component-crumb-trail-bundle",
     "type": "symfony-bundle",
     "description": "CCDN Forum Crumb Trail bundle",
     "keywords": ["forum", "board"],
-    "homepage": "http://github.com/codeconsortium/CrumbTrailBundle",
+    "homepage": "http://github.com/codeconsortium/CCDNComponentCrumbTrailBundle",
     "license": "MIT",
     "authors": [
         {
