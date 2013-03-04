@@ -1,8 +1,8 @@
 {%- spaceless -%}
-	<ul class="breadcrumb">
+	<ol class="breadcrumb">
 	{%- for key, crumb in crumbs.getTrail -%}
 		{%- if key == crumbs.count -%}
-			<li class="active">
+			<li>
 				<a href="{{- crumb.url -}}" title="{{- crumb.label -}}">{{- truncDot(crumb.label, ccdn_component_crumb_trail.crumb.last_crumb_truncate) -}}</a>
 			</li>
 		{%- else -%}
@@ -13,9 +13,9 @@
 					{%- else -%}
 						{{- truncDot(crumb.label, ccdn_component_crumb_trail.crumb.mid_crumb_truncate) -}}
 					{%- endif -%}
-				</a><span class="divider">/</span>
+				</a>
 			</li>
 		{%- endif -%}
 	{%- endfor -%}
-	</ul>
+	</ol>
 {%- endspaceless -%}
