@@ -3,15 +3,15 @@
 	{%- for key, crumb in crumbs.getTrail -%}
 		{%- if key == crumbs.count -%}
 			<li>
-				<a href="{{- crumb.url -}}" title="{{- crumb.label -}}">{{- truncDot(crumb.label, ccdn_component_crumb_trail.crumb.last_crumb_truncate) -}}</a>
+				<a href="{{- crumb.url -}}" title="{{- crumb.label -}}">{{- truncDot(crumb.label, ccdn_component_crumb_trail.crumb.last_crumb_truncate) |raw -}}</a>
 			</li>
 		{%- else -%}
 			<li>
 				<a href="{{- crumb.url -}}" title="{{- crumb.label -}}">
 					{%- if key == 0 -%}
-						{{- truncDot(crumb.label, ccdn_component_crumb_trail.crumb.first_crumb_truncate) -}}
+						{{- truncDot(crumb.label, ccdn_component_crumb_trail.crumb.first_crumb_truncate) |raw -}}
 					{%- else -%}
-						{{- truncDot(crumb.label, ccdn_component_crumb_trail.crumb.mid_crumb_truncate) -}}
+						{{- truncDot(crumb.label, ccdn_component_crumb_trail.crumb.mid_crumb_truncate) |raw -}}
 					{%- endif -%}
 				</a>
 			</li>
