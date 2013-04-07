@@ -20,7 +20,6 @@ namespace CCDNComponent\CrumbTrailBundle\Component\Helper;
  */
 class Crumb
 {
-
     /**
      *
      * @access private
@@ -28,20 +27,13 @@ class Crumb
     private $crumbs = array();
 
     /**
-     *
-     * @access public
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * Implements the Fluent Interface
      *
      * @access public
-     * @param string $label, string $url, string $icon
-     * @return self
+     * @param string $label
+	 * @param string $url
+	 * @param string $icon
+     * @return \CCDNComponent\CrumbTrailBundle\Component\Helper\Crumb
      */
     public function add($label, $url, $icon = null)
     {
@@ -69,5 +61,4 @@ class Crumb
     {
         return (count($this->crumbs) - 1);
     }
-
 }
