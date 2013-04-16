@@ -29,9 +29,10 @@ use Symfony\Component\Config\FileLocator;
  */
 class CCDNComponentCrumbTrailExtension extends Extension
 {
-
     /**
-     * {@inheritDoc}
+	 *
+     * @access public
+	 * @return string
      */
     public function getAlias()
     {
@@ -39,7 +40,10 @@ class CCDNComponentCrumbTrailExtension extends Extension
     }
 
     /**
-     * {@inheritDoc}
+     *
+     * @access public
+	 * @param array $config
+     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      */
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -48,13 +52,32 @@ class CCDNComponentCrumbTrailExtension extends Extension
 
         $config = $processor->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yml');
-
+		// Class file namespaces.
+        $this
+			->getComponentSection($config, $container)
+		;
+			
+		// Configuration stuff.
         $container->setParameter('ccdn_component_crumb_trail.crumb.first_crumb_truncate', $config['crumb']['first_crumb_truncate']);
         $container->setParameter('ccdn_component_crumb_trail.crumb.mid_crumb_truncate', $config['crumb']['mid_crumb_truncate']);
         $container->setParameter('ccdn_component_crumb_trail.crumb.last_crumb_truncate', $config['crumb']['last_crumb_truncate']);
 
+		// Load Service definitions.
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.yml');
     }
 
+    /**
+     *
+     * @access private
+	 * @param array $config
+     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
+	 * @return \CCDNComponent\CrumbTrailBundle\DependencyInjection\CCDNComponentCrumbTrailExtension
+     */
+    private function getComponentSection(array $config, ContainerBuilder $container)
+    {
+        $container->setParameter('ccdn_component_crumb_trail.component.trail.class', $config['component']['trail']['class']);		
+
+		return $this;
+	}
 }

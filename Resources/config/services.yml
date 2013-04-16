@@ -1,12 +1,13 @@
 parameters:
 
-    ccdn_component_crumb.trail.class: CCDNComponent\CrumbTrailBundle\Component\Helper\Crumb
+    # Service Parameters defined in app/config
 
 services:
 
     #
     # Crumb Trail Component.
     #
-    ccdn_component_crumb.trail:
-        class:      %ccdn_component_crumb.trail.class%
-        arguments:  [@templating]
+    ccdn_component_crumb_trail.component.trail:
+        class: %ccdn_component_crumb_trail.component.trail.class%
+        arguments:
+            - @templating

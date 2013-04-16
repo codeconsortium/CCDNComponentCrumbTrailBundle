@@ -15,6 +15,7 @@ namespace CCDNComponent\CrumbTrailBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 /**
  * This is the class that validates and merges configuration from your app/config files
@@ -27,16 +28,15 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 class Configuration implements ConfigurationInterface
 {
     /**
-     * {@inheritDoc}
+     *
+	 * @access public
+	 * @return \Symfony\Component\Config\Definition\Builder\TreeBuilder
      */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('crumb_trail');
+        $rootNode = $treeBuilder->root('ccdn_component_crumb_trail');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
         $rootNode
             ->children()
                 ->arrayNode('crumb')
@@ -47,8 +47,44 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('last_crumb_truncate')->defaultValue('20')->end()
                     ->end()
                 ->end()
-            ->end();
+            ->end()
+		;
 
+		// Class file namespaces.
+		$this
+			->addComponentSection($rootNode)
+		;
+		
         return $treeBuilder;
     }
+
+    /**
+     *
+     * @access private
+     * @param \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition $node
+	 * @return \CCDNComponent\CrumbTrailBundle\DependencyInjection\Configuration
+     */
+    private function addComponentSection(ArrayNodeDefinition $node)
+    {
+        $node
+            ->addDefaultsIfNotSet()
+            ->children()
+                ->arrayNode('component')
+                    ->addDefaultsIfNotSet()
+                    ->canBeUnset()
+                    ->children()
+		                ->arrayNode('trail')
+		                    ->addDefaultsIfNotSet()
+		                    ->canBeUnset()
+		                    ->children()
+								->scalarNode('class')->defaultValue('CCDNComponent\CrumbTrailBundle\Component\Helper\Crumb')->end()							
+							->end()
+						->end()
+					->end()
+				->end()
+			->end()
+		;
+		
+		return $this;
+	}
 }
