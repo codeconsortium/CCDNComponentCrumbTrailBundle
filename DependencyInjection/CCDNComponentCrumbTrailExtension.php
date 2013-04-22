@@ -24,15 +24,21 @@ use Symfony\Component\Config\FileLocator;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  *
- * @author Reece Fowell <reece@codeconsortium.com>
- * @version 1.0
+ * @category CCDNComponent
+ * @package  CrumbTrailBundle
+ *
+ * @author   Reece Fowell <reece@codeconsortium.com>
+ * @license  http://opensource.org/licenses/MIT MIT
+ * @version  Release: 2.0
+ * @link     https://github.com/codeconsortium/CCDNComponentCrumbTrailBundle
+ *
  */
 class CCDNComponentCrumbTrailExtension extends Extension
 {
     /**
-	 *
+     *
      * @access public
-	 * @return string
+     * @return string
      */
     public function getAlias()
     {
@@ -42,7 +48,7 @@ class CCDNComponentCrumbTrailExtension extends Extension
     /**
      *
      * @access public
-	 * @param array $config
+     * @param array                                                   $config
      * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      */
     public function load(array $configs, ContainerBuilder $container)
@@ -52,17 +58,17 @@ class CCDNComponentCrumbTrailExtension extends Extension
 
         $config = $processor->processConfiguration($configuration, $configs);
 
-		// Class file namespaces.
+        // Class file namespaces.
         $this
-			->getComponentSection($config, $container)
-		;
-			
-		// Configuration stuff.
+            ->getComponentSection($config, $container)
+        ;
+
+        // Configuration stuff.
         $container->setParameter('ccdn_component_crumb_trail.crumb.first_crumb_truncate', $config['crumb']['first_crumb_truncate']);
         $container->setParameter('ccdn_component_crumb_trail.crumb.mid_crumb_truncate', $config['crumb']['mid_crumb_truncate']);
         $container->setParameter('ccdn_component_crumb_trail.crumb.last_crumb_truncate', $config['crumb']['last_crumb_truncate']);
 
-		// Load Service definitions.
+        // Load Service definitions.
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
@@ -70,14 +76,14 @@ class CCDNComponentCrumbTrailExtension extends Extension
     /**
      *
      * @access private
-	 * @param array $config
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
-	 * @return \CCDNComponent\CrumbTrailBundle\DependencyInjection\CCDNComponentCrumbTrailExtension
+     * @param  array                                                                                $config
+     * @param  \Symfony\Component\DependencyInjection\ContainerBuilder                              $container
+     * @return \CCDNComponent\CrumbTrailBundle\DependencyInjection\CCDNComponentCrumbTrailExtension
      */
     private function getComponentSection(array $config, ContainerBuilder $container)
     {
-        $container->setParameter('ccdn_component_crumb_trail.component.trail.class', $config['component']['trail']['class']);		
+        $container->setParameter('ccdn_component_crumb_trail.component.trail.class', $config['component']['trail']['class']);
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -22,15 +22,21 @@ use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class }
  *
- * @author Reece Fowell <reece@codeconsortium.com>
- * @version 1.0
+ * @category CCDNComponent
+ * @package  CrumbTrailBundle
+ *
+ * @author   Reece Fowell <reece@codeconsortium.com>
+ * @license  http://opensource.org/licenses/MIT MIT
+ * @version  Release: 2.0
+ * @link     https://github.com/codeconsortium/CCDNComponentCrumbTrailBundle
+ *
  */
 class Configuration implements ConfigurationInterface
 {
     /**
      *
-	 * @access public
-	 * @return \Symfony\Component\Config\Definition\Builder\TreeBuilder
+     * @access public
+     * @return \Symfony\Component\Config\Definition\Builder\TreeBuilder
      */
     public function getConfigTreeBuilder()
     {
@@ -40,7 +46,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->arrayNode('crumb')
-	                ->addDefaultsIfNotSet()
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('first_crumb_truncate')->defaultValue('20')->end()
                         ->scalarNode('mid_crumb_truncate')->defaultValue('20')->end()
@@ -48,21 +54,21 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
             ->end()
-		;
+        ;
 
-		// Class file namespaces.
-		$this
-			->addComponentSection($rootNode)
-		;
-		
+        // Class file namespaces.
+        $this
+            ->addComponentSection($rootNode)
+        ;
+
         return $treeBuilder;
     }
 
     /**
      *
      * @access private
-     * @param \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition $node
-	 * @return \CCDNComponent\CrumbTrailBundle\DependencyInjection\Configuration
+     * @param  \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition  $node
+     * @return \CCDNComponent\CrumbTrailBundle\DependencyInjection\Configuration
      */
     private function addComponentSection(ArrayNodeDefinition $node)
     {
@@ -73,18 +79,18 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->canBeUnset()
                     ->children()
-		                ->arrayNode('trail')
-		                    ->addDefaultsIfNotSet()
-		                    ->canBeUnset()
-		                    ->children()
-								->scalarNode('class')->defaultValue('CCDNComponent\CrumbTrailBundle\Component\Helper\Crumb')->end()							
-							->end()
-						->end()
-					->end()
-				->end()
-			->end()
-		;
-		
-		return $this;
-	}
+                        ->arrayNode('trail')
+                            ->addDefaultsIfNotSet()
+                            ->canBeUnset()
+                            ->children()
+                                ->scalarNode('class')->defaultValue('CCDNComponent\CrumbTrailBundle\Component\Helper\Crumb')->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
+
+        return $this;
+    }
 }

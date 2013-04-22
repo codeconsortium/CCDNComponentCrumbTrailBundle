@@ -15,8 +15,14 @@ namespace CCDNComponent\CrumbTrailBundle\Component\Helper;
 
 /**
  *
- * @author Reece Fowell <reece@codeconsortium.com>
- * @version 1.0
+ * @category CCDNComponent
+ * @package  CrumbTrailBundle
+ *
+ * @author   Reece Fowell <reece@codeconsortium.com>
+ * @license  http://opensource.org/licenses/MIT MIT
+ * @version  Release: 2.0
+ * @link     https://github.com/codeconsortium/CCDNComponentCrumbTrailBundle
+ *
  */
 class Crumb
 {
@@ -30,9 +36,9 @@ class Crumb
      * Implements the Fluent Interface
      *
      * @access public
-     * @param string $label
-	 * @param string $url
-	 * @param string $icon
+     * @param  string                                                 $label
+     * @param  string                                                 $url
+     * @param  string                                                 $icon
      * @return \CCDNComponent\CrumbTrailBundle\Component\Helper\Crumb
      */
     public function add($label, $url, $icon = null)

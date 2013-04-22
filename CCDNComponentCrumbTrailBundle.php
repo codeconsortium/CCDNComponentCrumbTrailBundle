@@ -17,26 +17,30 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  *
- * @author Reece Fowell <reece@codeconsortium.com>
- * @version 1.0
+ * @category CCDNComponent
+ * @package  CrumbTrailBundle
+ *
+ * @author   Reece Fowell <reece@codeconsortium.com>
+ * @license  http://opensource.org/licenses/MIT MIT
+ * @version  Release: 2.0
+ * @link     https://github.com/codeconsortium/CCDNComponentCrumbTrailBundle
+ *
  */
 class CCDNComponentCrumbTrailBundle extends Bundle
 {
-			
-	/**
-	 *
-	 * @access public
-	 */
-	public function boot()
-	{
-		$twig = $this->container->get('twig');	
-		$twig->addGlobal('ccdn_component_crumb_trail', array(
-			'crumb' => array(
-				'first_crumb_truncate' => $this->container->getParameter('ccdn_component_crumb_trail.crumb.first_crumb_truncate'),
-				'mid_crumb_truncate' => $this->container->getParameter('ccdn_component_crumb_trail.crumb.mid_crumb_truncate'),
-				'last_crumb_truncate' => $this->container->getParameter('ccdn_component_crumb_trail.crumb.last_crumb_truncate'),
-			),
-		));
-	}
-
+    /**
+     *
+     * @access public
+     */
+    public function boot()
+    {
+        $twig = $this->container->get('twig');
+        $twig->addGlobal('ccdn_component_crumb_trail', array(
+            'crumb' => array(
+                'first_crumb_truncate' => $this->container->getParameter('ccdn_component_crumb_trail.crumb.first_crumb_truncate'),
+                'mid_crumb_truncate' => $this->container->getParameter('ccdn_component_crumb_trail.crumb.mid_crumb_truncate'),
+                'last_crumb_truncate' => $this->container->getParameter('ccdn_component_crumb_trail.crumb.last_crumb_truncate'),
+            ),
+        ));
+    }
 }
