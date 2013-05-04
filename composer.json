@@ -1,14 +1,15 @@
 {
     "name": "codeconsortium/ccdn-component-crumb-trail-bundle",
-    "type": "symfony-bundle",
     "description": "CCDN Component Crumb Trail Bundle",
     "keywords": ["ccdn", "codeconsortium", "crumb trail", "crumb", "trail", "navigation"],
     "homepage": "http://github.com/codeconsortium/CCDNComponentCrumbTrailBundle",
+    "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
         {
-            "name": "reecefowell",
-            "email": "reece@codeconsortium.com"
+            "name": "Reece Fowell",
+            "email": "reece@codeconsortium.com",
+			"homepage": "http://www.reecefowell.com"
         }
     ],
     "minimum-stability": "dev",
